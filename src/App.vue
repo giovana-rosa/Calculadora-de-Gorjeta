@@ -1,29 +1,7 @@
-<template>
-    <div class="app">
-        <h1 class="title">Calculadora de Gorjeta e Divisao</h1>
-
-        <div class="layout">
-            <div class="panel">
-                <h2>Entradas</h2>
-                <input v-model="bill" class="input" placeholder="Valor" />
-                <input v-model="tip" class="input" placeholder="Porcentagem" />
-                <input v-model="people" class="input" placeholder="Pessoas" />
-                <button class="small-btn" @click="calculate">Calcular</button>
-            </div>
-
-            <div class="panel">
-                <h2>Resultado</h2>
-                <div class="result">Total: {{ total }}</div>
-                <div class="result">Gorjeta: {{ tipValue }}</div>
-                <div class="result">Por pessoa: {{ perPerson }}</div>
-                <div class="result">{{ message }}</div>
-            </div>
-        </div>
-    </div>
-</template>
-
 <script setup>
 import { ref } from 'vue';
+import EntradaComponent from './components/entradaComponent.vue';
+import SaidaComponent from './components/saidaComponent.vue';
 
 const bill = ref('');
 const tip = ref('');
@@ -51,3 +29,44 @@ function calculate() {
     message.value = 'Ok';
 }
 </script>
+
+<template>
+    <div class="app">
+        <h1 class="title">Calculadora de Gorjeta e Diviszao</h1>
+
+        <div class="layout">
+            <EntradaComponent/>                  
+
+            <SaidaComponent/>
+        </div>
+    </div>
+</template>
+
+<style scoped>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+}
+
+.app {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.title {
+  font-size: 18px;
+  margin: 0 0 12px 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+</style>
