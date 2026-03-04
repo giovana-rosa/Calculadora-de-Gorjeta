@@ -1,3 +1,7 @@
+<script setup>
+
+</script>
+
 <template>
   <div class="panel">
     <h2>Resultado</h2>

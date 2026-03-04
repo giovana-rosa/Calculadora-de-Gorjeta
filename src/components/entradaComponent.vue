@@ -1,9 +1,27 @@
+<script setup>
+
+</script>
+
 <template>
   <div class="panel">
     <h2>Entradas</h2>
-    <input v-model="bill" class="input" placeholder="Valor" />
-    <input v-model="tip" class="input" placeholder="Porcentagem" />
-    <input v-model="people" class="input" placeholder="Pessoas" />
+    <ul>
+      <li>
+        <p>Valor: R$</p>
+        <input v-model="bill" class="input" />
+      </li>
+
+      <li>
+        <p>Porcentagem:</p>
+        <input v-model="tip" class="input" />
+      </li>
+
+      <li>
+        <p>Pessoas:</p>
+        <input v-model="people" class="input" />
+      </li>
+    </ul>
+
     <button class="small-btn" @click="calculate">Calcular</button>
   </div>
 </template>
@@ -35,4 +53,14 @@
   background: #eee;
   cursor: pointer;
 }
+
+.panel ul li{
+    display: flex;
+}
+
+.panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+}                   
 </style>
