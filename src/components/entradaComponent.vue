@@ -1,5 +1,15 @@
 <script setup>
+defineProps({
+  bill: Number,
+  tip: Number,
+  people: Number,
+});
 
+const emit = defineEmits(['click']);
+
+function handleClick() {
+  emit('click');
+}
 </script>
 
 <template>

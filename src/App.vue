@@ -1,7 +1,7 @@
 <script setup>
-import { ref } from 'vue';
 import EntradaComponent from './components/entradaComponent.vue';
 import SaidaComponent from './components/saidaComponent.vue';
+import { ref } from 'vue';
 
 const bill = ref('');
 const tip = ref('');
@@ -32,7 +32,7 @@ function calculate() {
 
 <template>
     <div class="app">
-        <h1 class="title">Calculadora de Gorjeta e Diviszao</h1>
+        <h1 class="title">Calculadora de Gorjeta e Divisão</h1>
 
         <div class="layout">
             <EntradaComponent/>                  
