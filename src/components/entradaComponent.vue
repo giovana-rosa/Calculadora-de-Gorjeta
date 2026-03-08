@@ -1,11 +1,32 @@
 <script setup>
-defineProps({
+import { computed } from "vue";
+
+const props = defineProps({
   bill: Number,
   tip: Number,
   people: Number,
 });
 
-const emit = defineEmits(['click']);
+const emit = defineEmits([
+  "click",
+  "update:bill",
+  "update:tip",
+  "update:people",
+]);
+const bill = computed({
+  get: () => props.bill,
+  set: (val) => emit("update:bill", val),
+});
+
+const tip = computed({
+  get: () => props.tip,
+  set: (val) => emit("update:tip", val),
+});
+
+const people = computed({
+  get: () => props.people,
+  set: (val) => emit("update:people", val),
+});
 
 function handleClick() {
   emit('click');
@@ -18,21 +39,21 @@ function handleClick() {
     <ul>
       <li>
         <p>Valor: R$</p>
-        <input v-model="bill" class="input" />
+        <input v-model.number="bill" class="input" />
       </li>
 
       <li>
         <p>Porcentagem:</p>
-        <input v-model="tip" class="input" />
+        <input v-model.number="tip" class="input" />
       </li>
 
       <li>
         <p>Pessoas:</p>
-        <input v-model="people" class="input" />
+        <input v-model.number="people" class="input" />
       </li>
     </ul>
 
-    <button class="small-btn" @click="calculate">Calcular</button>
+    <button class="small-btn" @click="handleClick">Calcular</button>
   </div>
 </template>
 

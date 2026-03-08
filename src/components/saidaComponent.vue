@@ -1,13 +1,18 @@
 <script setup>
-
+const props = defineProps({
+  total: Number,
+  tipValue: Number,
+  perPerson: Number,
+  message: String,
+});
 </script>
 
 <template>
   <div class="panel">
     <h2>Resultado</h2>
-    <div class="result">Total: {{ total }}</div>
-    <div class="result">Gorjeta: {{ tipValue }}</div>
-    <div class="result">Por pessoa: {{ perPerson }}</div>
+    <div class="result">Total: {{ total?.toFixed(2).replace(".", ",") }}</div>
+    <div class="result">Gorjeta: {{ tipValue?.toFixed(2).replace(".", ",") }}</div>
+    <div class="result">Por pessoa: {{ perPerson?.toFixed(2).replace(".", ",") }}</div>
     <div class="result">{{ message }}</div>
   </div>
 </template>
