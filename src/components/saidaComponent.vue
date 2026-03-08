@@ -4,16 +4,30 @@ const props = defineProps({
   tipValue: Number,
   perPerson: Number,
   message: String,
+  calculated: Boolean,
 });
 </script>
 
 <template>
   <div class="panel">
     <h2>Resultado</h2>
+
     <div class="result">Total: {{ total?.toFixed(2).replace(".", ",") }}</div>
-    <div class="result">Gorjeta: {{ tipValue?.toFixed(2).replace(".", ",") }}</div>
-    <div class="result">Por pessoa: {{ perPerson?.toFixed(2).replace(".", ",") }}</div>
-    <div class="result">{{ message }}</div>
+
+    <div class="result">
+      Gorjeta:
+      <span v-if="calculated && tipValue === 0">Sem gorjeta</span>
+      <span v-else-if="calculated">{{ tipValue?.toFixed(2).replace(".", ",") }}</span>
+      <span v-else>0,00</span>
+    </div>
+
+    <div class="result">
+      Por pessoa: {{ perPerson?.toFixed(2).replace(".", ",") }}
+    </div>
+
+    <div class="result">
+      {{ message }}
+    </div>
   </div>
 </template>
 
