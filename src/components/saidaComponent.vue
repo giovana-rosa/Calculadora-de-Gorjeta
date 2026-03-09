@@ -3,7 +3,6 @@ const props = defineProps({
   total: Number,
   tipValue: Number,
   perPerson: Number,
-  message: String,
   calculated: Boolean,
 });
 </script>
@@ -23,10 +22,6 @@ const props = defineProps({
 
     <div class="result">
       Por pessoa: {{ perPerson?.toFixed(2).replace(".", ",") }}
-    </div>
-
-    <div class="result">
-      {{ message }}
     </div>
   </div>
 </template>
