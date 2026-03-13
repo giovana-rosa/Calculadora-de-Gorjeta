@@ -28,11 +28,21 @@ const props = defineProps({
 
 <style scoped>
 .panel {
+  position: relative;
   background: #e8daff;
-  border: 1px solid #ab9ac9;
   border-radius: 7px;
-  padding: 12px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  padding: 20px;
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 6px;
+  border-radius: 7px 0 0 7px;
+  background: linear-gradient(#b377ca, #673ab6);
 }
 
 .panel h2 {

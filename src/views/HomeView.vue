@@ -36,7 +36,7 @@ function calculate() {
 
 <template>
   <div class="app">
-  <h1 class="title">Calculadora de Gorjeta e Divisão</h1>
+  <h1 class="title">CALCULADORA DE GORJETA E DIVISÃO DE VALORES</h1>
 
     <div class="page">
       <EntradaComponent
@@ -83,11 +83,14 @@ body {
 }
 
 .title {
-  font-size: 1.7rem;
-  margin: 2px 0 60px 0;
+  font-size: 1.4rem;
+  margin: 20px 0 60px 0;
   text-align: center;
-  color: #673ab6;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  background: linear-gradient(90deg, #c176df, #816bfd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .subtitle {

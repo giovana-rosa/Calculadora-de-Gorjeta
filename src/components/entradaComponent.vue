@@ -59,15 +59,25 @@ function handleClick() {
 
 <style scoped>
 .panel {
+  position: relative;
   background: #e8daff;
-  border: 1px solid #ab9ac9;
   border-radius: 7px;
-  padding: 12px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  padding: 20px;
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 6px;
+  border-radius: 7px 0 0 7px;
+  background: linear-gradient(#b377ca, #673ab6);
 }
 
 .panel h2 {
-  margin: 0 0 6px 0;
+  margin: 0 0 10px 0;
   font-size: 16px;
   color: #673ab6;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -91,17 +101,18 @@ function handleClick() {
 }
 
 .panel .small-btn {
-  font-size: 14px;
-  border: 1px solid #673ab6;
+  font-size: 15px;
+  border: none;
   border-radius: 5px;
-  background: #673ab6;
+  background: linear-gradient(90deg, #b377ca, #673ab6);
   cursor: pointer;
   color: #fff;
   font-weight: 600;
   display: block;
   margin: 0 auto;
-  padding: 4px 6px;
+  padding: 6px 12px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  box-shadow: 0 4px 10px rgba(103, 58, 182, 0.3);
 }
 
 .panel ul li{
