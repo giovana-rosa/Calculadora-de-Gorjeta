@@ -3,8 +3,6 @@ import EntradaComponent from "../components/entradaComponent.vue";
 import SaidaComponent from "../components/saidaComponent.vue";
 import { ref } from "vue";
 
-const step = ref(1);
-
 const bill = ref("");
 const tip = ref("");
 const people = ref("");
@@ -40,14 +38,7 @@ function calculate() {
   <div class="app">
   <h1 class="title">Calculadora de Gorjeta e Divisão</h1>
 
-  <!-- Parte 1: tela inicial -->
-    <div v-if="step === 1" class="page">
-      <h2 class="subtitle">Calcule sua gorjeta</h2>
-      <button @click="step = 2" class="aqui">AQUI</button>
-    </div>
-
-    <!-- Parte 2: tela de cálculo -->
-    <div v-if="step === 2" class="page">
+    <div class="page">
       <EntradaComponent
         :bill="bill"
         :tip="tip"

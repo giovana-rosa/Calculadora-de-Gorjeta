@@ -58,7 +58,6 @@ function handleClick() {
 </template>
 
 <style scoped>
-
 .panel {
   background: #e8daff;
   border: 1px solid #ab9ac9;
